@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="app-container">
+    <div id="start-screen" class="screen">
+        <h1 class="name">Перевір свій мозок🧠</h1>
+        <h2 class="subtitle">10 питань • різні теми • лише 1 правильна відповідь</h2>
+        <p>Чи зможеш набрати 10/10?</p>
+        <button class="start-button" id="start-btn">Почати гру</button>
+    </div>
+
+    <div id="quiz-screen" class="screen hide">
+        <div class="progress-bar">
+            <div id="progress-fill" class="progress-fill"></div>
+        </div>
+
+        <div class="header">
+            <span id="timer">Час: 15</span>
+            <span id="question-counter">1 / 10</span>
+            <span id="score-display">Бали: 0</span>
+        </div>
+
+        <span id="category-badge" class="category-badge"></span>
+        <h2 id="question-text">Завантаження питання...</h2>
+        <div id="answers-container"></div>
+    </div>
+
+    <div id="result-screen" class="screen hide">
+        <h2 id="result-title">Квіз завершено</h2>
+        <p id="result-emoji" class="result-emoji"></p>
+        <p id="result-text"></p>
+        <p id="result-message" class="result-message"></p>
+        <p id="best-score-text" class="best-score hide"></p>
+        <button id="restart-btn">Спробувати ще</button>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
