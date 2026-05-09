@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&display=swap');
+
+body {
+    font-family: 'Geist Mono', monospace;
+    background: linear-gradient(-45deg, #6e8efb, #a777e3, #ff6b9d, #feca57);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    overflow: hidden;
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.app-container {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 40px;
+    border-radius: 30px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    width: 90%;
+    max-width: 450px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.screen:not(.hide) {
+    animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 15px 0;
+    font-size: 14px;
+}
+
+
+.progress-bar {
+    width: 100%;
+    height: 8px;
+    background: #f0f0f0;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+.progress-fill {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, #6e8efb, #a777e3);
+    border-radius: 10px;
+    transition: width 0.4s ease;
+}
+
+
+.category-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, #6e8efb, #a777e3);
+    color: white;
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 10px 0;
+}
+
+.answer-btn {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    margin: 15px 0;
+    border: none;
+    border-radius: 15px;
+    background: #ffffff;
+    font-size: 17px;
+    font-weight: 600;
+    color: #444;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.2s ease, transform 0.2s;
+    position: relative;
+    overflow: hidden;
+}
+
+.answer-btn:hover:not(:disabled) {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    background-color: #f0f3ff;
+}
+
+.answer-btn:active:not(:disabled) { transform: translateY(1px); }
+
+.correct { background: #28a745; color: white; animation: pulse 0.4s; }
+.wrong   { background: #dc3545; color: white; animation: shake 0.4s; }
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-10px); }
+    75% { transform: translateX(10px); }
+}
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+#timer {
+    background: #ffeef0;
+    padding: 5px 15px;
+    border-radius: 20px;
+    color: #ff4757;
+    font-weight: bold;
+    border: 1px solid #ffccd2;
+}
+
+.start-button, #restart-btn {
+    background: linear-gradient(135deg, #6e8efb, #a777e3);
+    color: white;
+    border: none;
+    padding: 18px 40px;
+    border-radius: 50px;
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    cursor: pointer;
+    box-shadow: 0 10px 20px rgba(110, 142, 251, 0.4);
+    transition: 0.3s;
+}
+.start-button:hover, #restart-btn:hover {
+    box-shadow: 0 15px 30px rgba(110, 142, 251, 0.6);
+    transform: scale(1.05);
+}
+
+
+.result-emoji { font-size: 60px; margin: 10px 0; }
+.result-message { font-size: 18px; color: #6e8efb; font-weight: 600; margin: 15px 0; }
+.best-score { color: #a777e3; font-weight: bold; }
+
+.hide { display: none; }
+.screen { text-align: center; padding: 20px; }
